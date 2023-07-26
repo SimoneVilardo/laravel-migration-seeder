@@ -16,9 +16,44 @@
 </head>
 
 <body>
-
-
-
+    <div class="container">
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">AZIENDA</th>
+                        <th scope="col">STAZIONE DI PARTENZA</th>
+                        <th scope="col">STAZIONE DI ARRIVO</th>
+                        <th scope="col">DATA PARTENZA</th>
+                        <th scope="col">ORARIO DI PARTENZA</th>
+                        <th scope="col">ORARIO DI ARRIVO</th>
+                        <th scope="col">CODICE TRENO</th>
+                        <th scope="col">NUMERO CARROZZE</th>
+                        <th scope="col">IN ORARIO</th>
+                        <th scope="col">CANCELLATO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($trains as $train)
+                        @if ($train->data === '2023-07-26')
+                            <tr>
+                                <th scope="row">{{ $train->azienda }}</th>
+                                <td>{{ $train->stazione_di_partenza }}</td>
+                                <td>{{ $train->stazione_di_arrivo }}</td>
+                                <td>{{ $train->data }}</td>
+                                <td>{{ $train->orario_di_partenza }}</td>
+                                <td>{{ $train->orario_di_arrivo }}</td>
+                                <td>{{ $train->codice_treno }}</td>
+                                <td>{{ $train->numero_carrozze }}</td>
+                                <td>{{ $train->in_orario }}</td>
+                                <td>{{ $train->cancellato }}</td>
+                            </tr>    
+                        @endif
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 
 </html>
