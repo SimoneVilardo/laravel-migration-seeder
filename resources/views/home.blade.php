@@ -45,8 +45,16 @@
                                 <td>{{ $train->orario_di_arrivo }}</td>
                                 <td>{{ $train->codice_treno }}</td>
                                 <td>{{ $train->numero_carrozze }}</td>
-                                <td>{{ $train->in_orario }}</td>
-                                <td>{{ $train->cancellato }}</td>
+                                @if($train->in_orario === 0)
+                                    <td>Puntuale</td>    
+                                @else
+                                    <td>In Ritardo</td>    
+                                @endif
+                                @if($train->cancellato === 0)
+                                    <td>NO</td>    
+                                @else
+                                    <td>SI</td>    
+                                @endif
                             </tr>    
                         @endif
                     @endforeach
