@@ -46,9 +46,9 @@
                                 <td>{{ $train->codice_treno }}</td>
                                 <td>{{ $train->numero_carrozze }}</td>
                                 @if($train->in_orario === 0)
-                                    <td>Puntuale</td>    
-                                @else
                                     <td>In Ritardo</td>    
+                                @else
+                                    <td>Puntuale</td>    
                                 @endif
                                 @if($train->cancellato === 0)
                                     <td>NO</td>    
