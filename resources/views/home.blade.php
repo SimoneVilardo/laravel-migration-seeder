@@ -35,28 +35,26 @@
                 </thead>
                 <tbody>
                     @foreach ($trains as $train)
-                        @if ($train->data === '2023-07-26')
-                            <tr>
-                                <th scope="row">{{ $train->azienda }}</th>
-                                <td>{{ $train->stazione_di_partenza }}</td>
-                                <td>{{ $train->stazione_di_arrivo }}</td>
-                                <td>{{ $train->data }}</td>
-                                <td>{{ $train->orario_di_partenza }}</td>
-                                <td>{{ $train->orario_di_arrivo }}</td>
-                                <td>{{ $train->codice_treno }}</td>
-                                <td>{{ $train->numero_carrozze }}</td>
-                                @if($train->in_orario === 0)
-                                    <td>In Ritardo</td>    
-                                @else
-                                    <td>Puntuale</td>    
-                                @endif
-                                @if($train->cancellato === 0)
-                                    <td>NO</td>    
-                                @else
-                                    <td>SI</td>    
-                                @endif
-                            </tr>    
-                        @endif
+                        <tr>
+                            <th scope="row">{{ $train->azienda }}</th>
+                            <td>{{ $train->stazione_di_partenza }}</td>
+                            <td>{{ $train->stazione_di_arrivo }}</td>
+                            <td>{{ $train->data }}</td>
+                            <td>{{ $train->orario_di_partenza }}</td>
+                            <td>{{ $train->orario_di_arrivo }}</td>
+                            <td>{{ $train->codice_treno }}</td>
+                            <td>{{ $train->numero_carrozze }}</td>
+                            @if($train->in_orario === 0)
+                                <td>In Ritardo</td>    
+                            @else
+                                <td>Puntuale</td>    
+                            @endif
+                            @if($train->cancellato === 0)
+                                <td>NO</td>    
+                            @else
+                                <td>SI</td>    
+                            @endif
+                        </tr>    
                     @endforeach
                 </tbody>
             </table>
